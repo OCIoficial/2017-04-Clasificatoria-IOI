@@ -1,0 +1,41 @@
+\documentclass{oci}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+\title{Ca-chi-pún}
+\codename{cachipun}
+
+\begin{document}
+\begin{problemDescription}
+  Juegan $J$ jugadores.
+  Lista de $Q$ afirmaciones diciendo si el jugador $a$ gano, perdió o empató
+  contra el jugador $b$.
+  Para cada afirmación decidir si es consistente con la información hasta el momento.
+  Si es inconsistente descartarla.
+\end{problemDescription}
+
+\begin{inputDescription}
+  Primera línea con un entero $J$.
+  $Q$ líneas cada una conteniendo tres enteros $a$, $b$ y $m$.
+  $a$ y $b$ indican jugadores.
+  $m$ puede ser 0, 1 o 2 dependiendo si $a$ empató, ganó o perdió con $b$ respectivamente.
+\end{inputDescription}
+
+\begin{outputDescription}
+  Un único entero indicando la cantidad de afirmaciones que se descartaron (que
+  eran inconsistentes con lo anterior).
+\end{outputDescription}
+
+\begin{scoreDescription}
+  \score{10} $J=2$.
+  \score{10} $J=3$.
+  \score{10} $Q<10$.
+  \score{10} Sin restricciones adicionales.
+\end{scoreDescription}
+
+\begin{sampleDescription}
+\sampleIO{sample-1}
+\sampleIO{sample-2}
+\end{sampleDescription}
+
+\end{document}

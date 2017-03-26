@@ -1,0 +1,61 @@
+\documentclass{oci}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+\title{Naruto vs Sasuki pelea completa (español latino)}
+\codename{naruto}
+
+\begin{document}
+\begin{problemDescription}
+En medio de la pelea más intensa que ha presenciado el mundo ninja, Sasuke le
+menciona algo a su rival que lo hace largarse rápidamente del lugar: ``Antes de
+la pelea instalé n bombas en la Aldea de la Hoja, deberían estar a punto de
+estallar en este momento''.
+
+Naruto conoce bien a Sasuke y sabe que él domina tres elementos con los cuales se pueden hacer explosivos: Fuego, Electricidad y Sonido. Sabe también que desactivarlas tomará tiempo, y para esto recurrirá a una de las técnicas que más domina, los clones de sombra.
+
+Una vez el ninja ha encontrado y ha reunido las n bombas, las llevó a un lugar seguro para destruirlas. Ahora deberá usar sus poderes de Agua, Tierra y Vacío para neutralizar los explosivos. En términos de tiempo, usar un poder toma un minuto, lo mismo que usar la técnica de clones una vez. Sin embargo, esto no va a ser una tarea sencilla, ya que sus poderes tienen varias restricciones:
+
+\begin{enumerate}
+\item Usar la técnica de clones realiza k copias de /todos/ los clones, donde k es un número natural.
+\item No se pueden eliminar copias mientras queden bombas que desactivar.
+\item Si una copia usa un poder para desactivar una bomba, todas las copias deben usar el mismo poder al mismo tiempo. (Usar un poder cuando no hay una bomba que desactivar tiene el mismo poder destructivo que una bomba, así que no lo hará.)
+\end{enumerate}
+
+Por ejemplo, si Sasuke ha instalado n = 7 bombas, repartidas en 3, 2 y 2 de Fuego, Electricidad y Sonido respectivamente, una de las secuencias de poderes óptimas que puede realizar Naruto es la siguiente:
+
+\begin{enumerate}
+\item Destruir una bomba de Fuego.
+\item Clonarse usando k = 2. Ahora hay dos copias de Naruto.
+\item Destruir dos bombas de Fuego.
+\item Destruir dos bombas de Electricidad.
+\item Destruir dos bombas de Sonido.
+\end{enumerate}
+
+Por lo tanto, para destruir esa configuración de bombas, requiere 5 minutos.
+
+El tiempo apremia y nuestro ninja favorito quiere saber cuánto tardará en desactivar todas las bombas.
+\end{problemDescription}
+
+\begin{inputDescription}
+  Una línea con tres enteros $a, b$ y $c$ ($a,b,c\leq 50$) en orden ascendente
+  en orden ascendente.
+\end{inputDescription}
+
+\begin{outputDescription}
+  Un único entero correspondiente al costo óptimo.
+\end{outputDescription}
+
+\begin{scoreDescription}
+  \score{10} $a = b = 0$.
+  \score{10} $a = 0$ y $c - b \leq 2$.
+  \score{10} $b - a \leq 2$
+  \score{10} Sin restricciones adicionales.
+\end{scoreDescription}
+
+\begin{sampleDescription}
+\sampleIO{sample-1}
+\sampleIO{sample-2}
+\end{sampleDescription}
+
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass{oci}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+\title{Teletransportador cuántico de flujos}
+\codename{teletransportador}
+
+\begin{document}
+\begin{problemDescription}
+``Eureka!'' gritó el Dr. Bernardé al probar con éxito su último invento: el
+teletransportador cuántico de flujos.
+Con este invento, él planeaba revolucionar la industria de la transportación.
+
+Pero este invento presento un gran problema para la gran nación de Nlogonia:
+Dada su distribución consistente en una gran Metrópolis central con pequeñas
+ciudades alrededor, cada una conectada por un camino a la capital, no hay forma
+simple de organizar el costo del uso del transportador: Si el transportador
+cuesta menos que el peaje del camino, este va a terminar colapsando por su mayor
+uso; y en el caso contrario el camino colapsará.
+
+Dada esta compleja situación, el presidente Robinçois llego a una sola
+conclusión: el precio del teletransportador y el de uso de un camino deben ser
+iguales.
+Dado que el teletransportador es un servicio estatal, su coste debe ser
+igual en todas las ciudades, así que se decidió que todos los caminos iban a ser
+modificados de tal manera que todos tuvieran igual coste.
+
+Esta no es una tarea fácil, pues cada camino tiene inicialmente un costo $A_i$ y
+cambiar este costo en una unidad cuesta $C_i$ Nlogdolarés.
+Es por esto que te han contratado a ti para responder la siguiente pregunta:
+¿Cual es el coste $C$ óptimo para el teletransportador de tal manera que el costo
+de cambiar los caminos sea mínimo?
+
+\end{problemDescription}
+
+\begin{inputDescription}
+  Primero recibirás n ($2 \leq n \leq 10^6$): la cantidad de caminos.
+  En la primera
+linea recibiras n números: Los valores de $A_i$ .
+Y en la última linea recibiras n números: 
+Los valores de $C_i$ ($1 \leq C_i \leq 10^3$).
+\end{inputDescription}
+
+\begin{outputDescription}
+Deberás imprimir un solo número: El valor para $C$ de tal manera que el costo de
+cambiar todos los caminos sea mínimo.
+En el caso de que existan múltiples $C$, imprime aquel con menor valor.
+\end{outputDescription}
+
+\begin{scoreDescription}
+  \score{10} $A_i=A_j$ para todo $i,j$ y $1 \leq A_i \leq 10^9$.
+  \score{20} $1 \leq A_i \leq 10$.
+  \score{30} $C_i=C_j$ para todo $i,j$ y $1\leq A_i\leq 10^9$.
+  \score{40} $1\leq A_i\leq 10^9$ y sin restricciones adicionales
+\end{scoreDescription}
+
+\begin{sampleDescription}
+\sampleIO{sample-1}
+\sampleIO{sample-2}
+\end{sampleDescription}
+
+\end{document}
