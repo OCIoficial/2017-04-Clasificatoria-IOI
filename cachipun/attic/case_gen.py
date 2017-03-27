@@ -1,7 +1,7 @@
 import sys
 import random
 
-random.seed(hash(sys.argv[0]))
+random.seed(hash(sys.argv[1]))
 
 
 def generate_case(J, Q):
@@ -13,9 +13,9 @@ def generate_case(J, Q):
 			b = random.randint(0,J)
 		m = random.randint(0,2)
 		
-		print a, b, m	
+		print(a, b, m)	
 
-J, Q = int(sys.argv[1]), int(sys.argv[2])
+J, Q = int(sys.argv[2]), int(sys.argv[3])
 
 print(generate_case(J, Q))
 
