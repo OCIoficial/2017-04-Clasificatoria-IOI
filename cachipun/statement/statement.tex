@@ -7,11 +7,23 @@
 
 \begin{document}
 \begin{problemDescription}
-  Juegan $J$ jugadores.
-  Lista de $Q$ afirmaciones diciendo si el jugador $a$ gano, perdió o empató
-  contra el jugador $b$.
-  Para cada afirmación decidir si es consistente con la información hasta el momento.
-  Si es inconsistente descartarla.
+  Como ya todos saben, cada año la OCI (Olimpiada de Cachipún Internacional) organiza una gran ronda de exhibición donde $J$ jugadores se enfrentan simultáneamente. Esto quiere decir que todos corearán al unísono $Ca - chi - pun$ y al finalizar esta última palabra cada jugador pondrá su mano en una posición bien definida, representando abstractamente una piedra, un papel, o unas tijeras. 
+
+Evidentemente el papel vence a la piedra puesto que la envuelve, la piedra vence a las tijeras puesto que las aplasta, y la tijera vence al papel puesto que lo corta.
+
+Dada la vital importancia de la OCI, y que Chile, un país sísmico será la próxima sede, usted ha sido encargado para diseñar un protocolo en caso de terremotos.
+Para esto puede suponer que con un terrremoto los registros de la ronda de exhibición se perderían, y la única forma de reconstruir lo que pasó en la ronda sería consultar a los expectadores y sus recuerdos. Como es obvio, los expectadores pueden tener recuerdos erróneos, de ahí la dificultad del problema. Además, no tienen buena memoria, y solo son capaces de recordar el resultado entre 2 jugadores distintos, por ejemplo, un expectador puede recordar que el jugador 14 perdió contra el jugador 15 (sin recordar lo que cada uno jugó con su mano) y más aún, ese recuerdo podría ser una confusión.
+
+Para resolver el problema de los recuerdos posiblemente erróneos, usted ha tenido una idea brillante, ver, por cada uno, si es consistente con el conjunto de los recuerdos previamente analizados (y no erróneos).
+
+Un recuerdo $r$ es consistente con un conjunto $C$ de recuerdos previamente analizados si existe una cierta configuración de lo que sacó cada jugador tal que $r$ y cada recuerdo de $C$ son simultáneamente verdaderos para esa configuración. 
+
+Por ejemplo, supongamos que ya se analizó un recuerdo que dice que el jugador 7 le ganó al jugador 8, y se recibe un nuevo recuerdo que dice que el jugador 6 perdió contra el jugador 7. ¿Es este nuevo recuerdo consistente? Sí, porque la configuración, por ejemplo, en que el jugador 7 sacó piedra, y tanto el jugador 6 como el 8 sacaron tijeras, hace que ambos recuerdos sean verdaderos al mismo tiempo. 
+
+En cambio, si el nuevo recuerdo es que el jugador 7 empató con el jugador 8, ninguna combinación de jugadas para el jugador 7 y el jugador 8 hace verdaderos ambos recuerdos al mismo tiempo.
+
+Más precisamente, dada una lista de $Q$ afirmaciones, donde cada una dice si el jugador $a$ ganó, perdió, o empató contra el jugador $b$, su misión es detectar, para cada afirmación, si esta es consistente o no con el resto. En caso de que una afirmación sea inconsistente, debe ser descartada, y es como si nunca la hubiese recibido.
+
 \end{problemDescription}
 
 \begin{inputDescription}
