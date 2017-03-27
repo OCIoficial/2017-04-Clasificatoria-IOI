@@ -13,26 +13,44 @@
 
 ###############################################################################
 
-# J = 1
+# J = 2
 
 [Subtask 1]
   # Use sample data as test
   1 ; copy statement/sample-1.in
   1 ; copy statement/sample-2.in
 
-  # Manual test case
-  2 ; copy attic/manual-1.in
-
   # Random tests
-  3 ; random.cpp 10 100
-  3 ; random.cpp 100 1000
+  2 ; case_gen.py 2 9
+  2 ; case_gen.py 2 9
 
+# J = 3
 
 [Subtask 2]
   # Random tests
-  1 ; random.java 10 20 30
-  1 ; random.java 20 30 40
+  3 ; case_gen.py 3 9
+  3 ; case_gen.py 3 9
 
-  # More random tests
-  2 ; random.py 1 1000
+# Q < 10
+
+[Subtask 3]
+  4 ; case_gen.py 10 9
+  4 ; case_gen.py 100 9
+  4 ; case_gen.py 1000 9
+  4 ; case_gen.py 10000 9
+  4 ; case_gen.py 100000 9
+
+# Sin restricciones
+
+[Subtask 4]
+
+  5 ; case_gen.py 10 10
+  5 ; case_gen.py 10 100
+  5 ; case_gen.py 10 1000
+  5 ; case_gen.py 100 100
+  5 ; case_gen.py 1000 1000
+  5 ; case_gen.py 1000 10000
+  5 ; case_gen.py 1000 100000
+  5 ; case_gen.py 10000 10000
+  5 ; case_gen.py 100000 100000
 

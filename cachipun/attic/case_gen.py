@@ -5,7 +5,7 @@ random.seed(hash(sys.argv[0]))
 
 
 def generate_case(J, Q):
-	print J, Q
+	print(J, Q)
 	for _ in range(Q):
 		a = random.randint(0,J)
 		b = a
@@ -17,5 +17,5 @@ def generate_case(J, Q):
 
 J, Q = int(sys.argv[1]), int(sys.argv[2])
 
-print generate_case(J, Q)
+print(generate_case(J, Q))
 
