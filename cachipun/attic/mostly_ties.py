@@ -11,11 +11,11 @@ def generate_case(J, Q):
 		b = a
 		while b == a:
 			b = random.randint(0,J)
-		m = random.randint(0,2)
+		m = random.choice([0]*2 + [1]*5 + [2]*2)
 		
 		print(a, b, m)	
 
 J, Q = int(sys.argv[2]), int(sys.argv[3])
 
-print(generate_case(J, Q))
+generate_case(J, Q)
 
