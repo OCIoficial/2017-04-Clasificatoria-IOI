@@ -25,14 +25,10 @@
   2 ; random_gen.py 2 9
   2 ; pairwise.py 2 9
   2 ; pairwise.py 2 9
-  2 ; triplets.py 2 9
-  2 ; triplets.py 2 9
   2 ; no_ties.py 2 9
   2 ; no_ties.py 2 9
   2 ; mostly_ties.py 2 9
   2 ; mostly_ties.py 2 9
-  2 ; connected_graphs_anti_greedy.py 2 9
-  2 ; connected_graphs_anti_greedy.py 2 9
 
 
 # J = 3
