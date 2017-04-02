@@ -7,42 +7,102 @@
 
 \begin{document}
 \begin{problemDescription}
-  Como ya todos saben, cada año la OCI (Olimpiada de Cachipún Internacional) organiza una gran ronda de exhibición donde $J$ jugadores se enfrentan simultáneamente. Esto quiere decir que todos corearán al unísono $Ca - chi - pun$ y al finalizar esta última palabra cada jugador pondrá su mano en una posición bien definida, representando abstractamente una piedra, un papel, o unas tijeras. 
+  Cada año la Organización de Cachipún Internacional (OCI) organiza la
+  más famosa y conocida convención de cachipún, la cachi-con.
+  En esta, profesionales y aficionados de todo el mundo se reúnen durante una
+  semana con el solo fin de disfrutar del popular juego.
+  Durante la convención se llevan a cabo muchos eventos, pero sin duda una de
+  las atracciones más populares son las partidas masivas de cachipún.
 
-Evidentemente el papel vence a la piedra puesto que la envuelve, la piedra vence a las tijeras puesto que las aplasta, y la tijera vence al papel puesto que lo corta.
+  En una partida masiva de cachipún se enfrentan de forma simultánea $J$
+  jugadores quienes deben gritar al unísono ca - chi - pún.
+  Como es habitual, luego del grito, cada jugador debe escoger entre sacar
+  piedra, papel o tijera y demostrar su elección representando con la mano
+  el objeto escogido.
+  Evidentemente el papel vence a la piedra pues la envuelve, la piedra vence a
+  las tijeras puesto que las aplasta y la tijera vence al papel pues lo corta.
+  Finalmente, cada jugador obtiene una cantidad de puntos igual al número de
+  veces que ganó menos el número de veces que perdió.
 
-Dada la vital importancia de la OCI, y que Chile, un país sísmico será la próxima sede, usted ha sido encargado para diseñar un protocolo en caso de terremotos.
-Para esto puede suponer que con un terrremoto los registros de la ronda de exhibición se perderían, y la única forma de reconstruir lo que pasó en la ronda sería consultar a los expectadores y sus recuerdos. Como es obvio, los expectadores pueden tener recuerdos erróneos, de ahí la dificultad del problema. Además, no tienen buena memoria, y solo son capaces de recordar el resultado entre 2 jugadores distintos, por ejemplo, un expectador puede recordar que el jugador 14 perdió contra el jugador 15 (sin recordar lo que cada uno jugó con su mano) y más aún, ese recuerdo podría ser una confusión.
+  Al ser una atracción tan popular, la cantidad de jugadores que se reúne en una
+  sola partida puede ser gigantesca y siempre es difícil determinar el
+  resultado final de esta.
+  Para realizar esta difícil tarea se designan jueces externos quiénes
+  están encargados de observar una cierta cantidad de jugadores.
+  Al finalizar la partida los jueces reportan sus observaciones al juez
+  principal quien tiene la responsabilidad de calcular el resultado final a
+  partir de todas las observaciones.
 
-Para resolver el problema de los recuerdos posiblemente erróneos, usted ha tenido una idea brillante, ver, por cada uno, si es consistente con el conjunto de los recuerdos previamente analizados (y no erróneos).
+  Con el fin de evitar que los jueces tengan que memorizar tanta información,
+  solo se les pide recordar observaciones que involucren a dos jugadores.
+  Adicionalmente solo deberán recordar quién de los dos jugadores fue el ganador
+  o si hubo un empate entre ellos.
+  Por ejemplo, un juez puede recordar que el jugador $a$ perdió contra el
+  jugador $b$ o que el jugador $c$ empató con el $d$, pero no saber de forma
+  exacta que objeto (piedra, papel o tijera) escogió cada jugador.
 
-Un recuerdo $r$ es consistente con un conjunto $C$ de recuerdos previamente analizados si existe una cierta configuración de lo que sacó cada jugador tal que $r$ y cada recuerdo de $C$ son simultáneamente verdaderos para esa configuración. 
+  El juez principal sigue una estrategia sencilla para reunir la información del
+  resto de los jueces.
+  Cada juez indica una a una las observaciones que recuerda y el juez principal
+  las agrega en ese mismo orden a la información que lleva acumulada.
+  Sin embargo, suele suceder que los jueces realizan observaciones con recuerdos
+  erróneos, así que el juez principal debe asegurarse que en cada momento la
+  información acumulada sea consistente.
 
-Por ejemplo, supongamos que ya se analizó un recuerdo que dice que el jugador 7 le ganó al jugador 8, y se recibe un nuevo recuerdo que dice que el jugador 6 perdió contra el jugador 7. ¿Es este nuevo recuerdo consistente? Sí, porque la configuración, por ejemplo, en que el jugador 7 sacó piedra, y tanto el jugador 6 como el 8 sacaron tijeras, hace que ambos recuerdos sean verdaderos al mismo tiempo. 
+  Diremos que la información acumulada es consistente si existe una forma de
+  asignar un objeto a cada jugador manteniendo verdadera la información
+  acumulada.
+  De forma análoga diremos que es inconsistente si no existe una forma de
+  asignar objetos a cada jugador manteniendo verdadera la información acumulada.
+  Por ejemplo, la información mostrada a continuación es consistente pues es
+  posible que el jugador 1 haya sacado piedra y tanto el jugador 2 como
+  el 3 hayan sacado tijeras.
 
-En cambio, si el nuevo recuerdo es que el jugador 7 empató con el jugador 8, ninguna combinación de jugadas para el jugador 7 y el jugador 8 hace verdaderos ambos recuerdos al mismo tiempo.
+    \begin{center}
+      El jugador 1 le ganó al 2.\\
+      El jugador 3 perdió contra el jugador 1.\\
+      El jugador 3 empató con el 2.
+    \end{center}
 
-Más precisamente, dada una lista de $Q$ afirmaciones, donde cada una dice si el jugador $a$ ganó, perdió, o empató contra el jugador $b$, su misión es detectar, para cada afirmación, si esta es consistente o no con el resto. En caso de que una afirmación sea inconsistente, debe ser descartada, y es como si nunca la hubiese recibido.
+  Si en algún momento el juez principal recibe una observación que al agregarse
+  deje la información en un estado inconsistente entonces la descartará y
+  seguirá procesando el resto de las observaciones.
+  Por ejemplo, dada la información anterior, si el juez principal recibe una
+  observación diciendo que el jugador 1 empató con el 2 la descartarla, no
+  existe forma de asignar objetos a los jugadores 1 y 2 de forma que 1 le haya
+  ganado a 2, peor a la vez hayan empatado.
 
+  Los organizadores de la cachi-con están preocupados de que se estén
+  descartando demasiadas observaciones.
+  Tu tarea es determinar cuantas observaciones fueron descartadas dada la lista
+  de observaciones para una partida de cachipún masivo.
 \end{problemDescription}
 
 \begin{inputDescription}
-  Primera línea con un entero $J$.
-  $Q$ líneas cada una conteniendo tres enteros $a$, $b$ y $m$.
-  $a$ y $b$ indican jugadores.
-  $m$ puede ser 0, 1 o 2 dependiendo si $a$ empató, ganó o perdió con $b$ respectivamente.
+  La primera línea de la entrada contiene dos enteros positivos $J$ y $Q$
+  indicando respectivamente la cantidad de jugadores y observaciones procesadas
+  por el juez principal.
+  Cada jugador es identificado con un número entre 0 y $J-1$.
+  Posteriormente, cada una de las siguientes $Q$ líneas contiene la descripción
+  de una observación en el orden procesadas por el juez principal.
+  Cada observación es descrita con tres enteros $a$, $b$ y $m$.
+  Los enteros $a$ y $b$ ($a\neq b$ y $1\leq a, b \leq J$) indican los jugadores involucrados
+  en la observación.
+  El entero $m$ puede ser 0, 1 o 2 dependiendo si la observación indica que $a$
+  perdió, empató o ganó contra $b$ respectivamente.
 \end{inputDescription}
 
 \begin{outputDescription}
-  Un único entero indicando la cantidad de afirmaciones que se descartaron (que
-  eran inconsistentes con lo anterior).
+  La salida debe contener un único entero indicando la cantidad de observaciones
+  que fueron descartadas, es decir, la cantidad de observación que de haber sido
+  agregadas hubiesen dejado la información en un estado inconsistente.
 \end{outputDescription}
 
 \begin{scoreDescription}
-  \score{10} $J=2$.
-  \score{10} $J=3$.
-  \score{10} $Q<10$.
-  \score{10} Sin restricciones adicionales.
+  \score{10} $J=2$ y $0 < Q < 10$.
+  \score{10} $J=3$ y $0 < Q < 10$.
+  \score{10} $0 < J \leq 10^5$ y $0 < Q < 10$.
+  \score{10} $0 < J \leq 10^5$ y $0 < Q \leq 10^5$
 \end{scoreDescription}
 
 \begin{sampleDescription}
