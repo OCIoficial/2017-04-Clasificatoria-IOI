@@ -21,12 +21,12 @@ bool consistent() {
   for (int i = 0; i < 3; ++i) {
     for (int j = 0; j < 3; ++j) {
       for (int k = 0; k < 3; ++k) {
-        vector<int> assign = {i, j, k};
+        vector<int> world = {i, j, k};
         bool b = true;
         for (auto obs : info) {
-          if (obs[2] == 1 and assign[obs[0]] != assign[obs[1]])
+          if (obs[2] == 1 and world[obs[0]] != world[obs[1]])
             b = false;
-          if (obs[2] == 2 and not beats(assign[obs[0]], assign[obs[1]]))
+          if (obs[2] == 2 and not beats(world[obs[0]], world[obs[1]]))
             b = false;
         }
         if (b)
