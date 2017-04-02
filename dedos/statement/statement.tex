@@ -1,0 +1,72 @@
+\documentclass{oci}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+\title{Dedos Rápidos}
+\codename{dedos}
+
+\begin{document}
+\begin{problemDescription}
+Un famoso videojuego de ritmo musical consiste en hacer al jugador tocar
+canciones de rock con una guitarra eléctrica simplificada.
+La guitarra simplificada consiste en $B$ botones dispuestos en una línea, los
+cuales representan los trastes de una guitarra eléctrica.
+El objetivo es acertar a tocar la mayor cantidad de notas de la canción que
+sea posible.
+
+Una canción está formada por $T$ tiempos, en los cuales pueden ocurrir notas
+musicales o no.
+Cada nota musical en la canción ocurre en un tiempo $t_i$, dura exactamente
+un tiempo y está asociada a un botón $b_j$ (traste).
+Pueden haber varias notas al mismo tiempo, y pueden haber varias notas
+consecutivas asociadas al mismo botón, pero no puede haber dos notas que
+ocurren al mismo tiempo para el mismo botón.
+
+Coni es fanática de este videojuego, y para cada canción quiere saber el máximo
+puntaje que puede alcanzar usando $D$ dedos.
+Su problema es que, dependiendo del ritmo de la canción, puede que no sea
+capaz de mover los dedos suficientemente rápido.
+Cada dedo puede moverse de un botón a otro en $C$ tiempos, durante los cuales
+ese dedo no puede presionar ningún botón.
+Es posible para Coni cruzar sus dedos mientras juega, y también es posible
+tener dos dedos sobre el mismo botón.
+
+\end{problemDescription}
+
+Para resolver este problema, te pedimos implementar la función
+\begin{verbatim}
+int max_puntaje(vector< vector< bool > > cancion, int d, int c)
+\end{verbatim}
+que describimos a continuación:
+
+\begin{inputDescription}
+\begin{itemize}
+ \item \verb#cancion#: un vector de dos dimensiones de tamaño $T \times B$,
+ donde \verb#cancion[i]# indica las notas de la canción para el tiempo
+ $i$-ésimo, en particular, \verb#cancion[i][j]# es verdadero si en el tiempo
+ $i$-ésimo hay una nota asociada al botón $j$-ésimo, y falso si no.
+ \item \verb#d#: es el número de dedos que usará Coni.
+ \item \verb#c#: es número de tiempos que toma cambiar un dedo de un botón
+ a otro.
+\end{itemize}
+\end{inputDescription}
+
+\begin{outputDescription}
+La salida del problema debe ser un entero $M$, el máximo número de notas que
+Coni puede acertar en \verb#cancion# usando $d$ dedos, considerando que tras un
+cambio de botón, un dedo no puede ser usado durante \verb#c# tiempos.
+\end{outputDescription}
+
+\begin{scoreDescription}
+  \score{10} Cada caso tendrá $d = 1$ y $c = 0$. Además, $T = 5$ y $B \le 100$.
+  \score{25} Cada caso tendrá $d = 2$ y $c = 0$. Además, $T = 5$ y $B \le 100$.
+  \score{30} Cada caso tendrá $d = 1$ y $c = 1$. Además, $T = 5$ y $B \le 1000$.
+  \score{35} Cada caso tendrá $2 \le d \le 3$ y $1 \le c \le 5$. Además, $T = 5$ y $B \le 1000$.
+\end{scoreDescription}
+
+\begin{sampleDescription}
+\sampleIO{sample-1}
+\sampleIO{sample-2}
+\end{sampleDescription}
+
+\end{document}
