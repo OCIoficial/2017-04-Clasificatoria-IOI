@@ -8,49 +8,76 @@
 \begin{document}
 \begin{problemDescription}
 En medio de la pelea más intensa que ha presenciado el mundo ninja, Sasuke le
-menciona algo a su rival que lo hace largarse rápidamente del lugar: ``Antes de
-la pelea instalé n bombas en la Aldea de la Hoja, deberían estar a punto de
-estallar en este momento''.
+menciona algo a su rival que lo hace retirarse rápidamente del lugar: ``Antes de
+la pelea instalé $N$ bombas en la Aldea de la Hoja, en este momento deben estar
+a punto de estallar''.
 
-Naruto conoce bien a Sasuke y sabe que él domina tres elementos con los cuales se pueden hacer explosivos: Fuego, Electricidad y Sonido. Sabe también que desactivarlas tomará tiempo, y para esto recurrirá a una de las técnicas que más domina, los clones de sombra.
+Naruto conoce bien a Sasuke y sabe que él domina tres elementos con los cuales
+puede hacer explosivos: \emph{fuego}, \emph{electricidad} y \emph{sonido}.
+Naruto sabe también que desactivar las bombas tomará tiempo, y para esto
+recurrirá a una de las técnicas que más domina, los clones de sombra.
 
-Una vez el ninja ha encontrado y ha reunido las n bombas, las llevó a un lugar seguro para destruirlas. Ahora deberá usar sus poderes de Agua, Tierra y Vacío para neutralizar los explosivos. En términos de tiempo, usar un poder toma un minuto, lo mismo que usar la técnica de clones una vez. Sin embargo, esto no va a ser una tarea sencilla, ya que sus poderes tienen varias restricciones:
+Después de haber encontrado y reunido las $N$ bombas, nuestro héroe ninja las
+llevó a un lugar seguro para desactivarlas.
+Naruto deberá usar sus poderes de \emph{agua}, \emph{tierra} y \emph{vacío},
+para neutralizar los explosivos y de esta forma desactivar las bombas.
+Usando el poder de agua puede desactivar una bomba de fuego, usando el de
+tierra una bomba de electricidad y finalmente usando el poder de vacío puede
+desactivar una bomba de sonido.
+Naruto debe desactivar las bombas lo más rápido posible y por esto utilizará la
+técnica de clones para hacer copias de si mismo y de esta forma poder
+desactivar varias bombas de forma simultánea.
+
+Antes de utilizar la técnica de clones Naruto debe escoger un entero positivo
+$k$.
+Al realizar la técnica se crearán $k$ copias de todos los clones que haya en ese
+momento.
+Por ejemplo, inicialmente solo hay una copia de Naruto, si este decide realizar
+la técnica de clones con $k=3$ habrá 3 copia de Naruto.
+Si en este estado decide realizar la técnica con $k=2$ cada una de las 3 copias
+se clonará 2 veces y por lo tanto habrá finalmente 12 copias de Naruto.
+
+Controlar todos los clones simultáneamente es complejo y por lo tanto cada vez
+que Naruto utiliza uno de sus poderes para desactivar una bomba todos los clones
+deben usar el mismo poder y desactivar una bomba al mismo tiempo.
+Adicionalmente no es posible eliminar clones mientras queden bombas por
+desactivar.
+
+A Naruto le toma un minuto usar uno de sus poderes para desactivar una bomba
+y de la misma forma le toma un minuto realizar la técnica de clones.
+El tiempo apremia y nuestro ninja favorito quiere saber cuál es la mínima
+cantidad de minutos en que puede desactivar todas las bombas.
+Por ejemplo, si Sasuke ha instalado 7 bombas, repartidas en 3 de fuego, 2 de
+electricidad y 2 de sonido, Naruto puede desactivar todas las bombas en 5
+minutos siguiendo la siguiente secuencia de acciones donde cada una toma 1
+minuto.
 
 \begin{enumerate}
-\item Usar la técnica de clones realiza k copias de /todos/ los clones, donde k es un número natural.
-\item No se pueden eliminar copias mientras queden bombas que desactivar.
-\item Si una copia usa un poder para desactivar una bomba, todas las copias deben usar el mismo poder al mismo tiempo. (Usar un poder cuando no hay una bomba que desactivar tiene el mismo poder destructivo que una bomba, así que no lo hará.)
+\item Desactivar una bomba de fuego.
+\item Clonarse usando $k = 2$. Ahora hay dos copias de Naruto.
+\item Desactivar dos bombas de fuego simultáneamente.
+\item Desactivar dos bombas de electricidad simultáneamente.
+\item Desactivar dos bombas de sonido simultáneamente.
 \end{enumerate}
 
-Por ejemplo, si Sasuke ha instalado n = 7 bombas, repartidas en 3, 2 y 2 de Fuego, Electricidad y Sonido respectivamente, una de las secuencias de poderes óptimas que puede realizar Naruto es la siguiente:
-
-\begin{enumerate}
-\item Destruir una bomba de Fuego.
-\item Clonarse usando k = 2. Ahora hay dos copias de Naruto.
-\item Destruir dos bombas de Fuego.
-\item Destruir dos bombas de Electricidad.
-\item Destruir dos bombas de Sonido.
-\end{enumerate}
-
-Por lo tanto, para destruir esa configuración de bombas, requiere 5 minutos.
-
-El tiempo apremia y nuestro ninja favorito quiere saber cuánto tardará en desactivar todas las bombas.
 \end{problemDescription}
 
 \begin{inputDescription}
-  Una línea con tres enteros $a, b$ y $c$ ($a,b,c\leq 50$) en orden ascendente
-  en orden ascendente.
+  La entrada consiste en una única línea conteniendo tres enteros $a, b$ y $c$
+  ($0\leq a \leq b \leq c \leq 50$) correspondientes a la cantidad de bombas de fuego,
+  electricidad y sonido respectivamente.
 \end{inputDescription}
 
 \begin{outputDescription}
-  Un único entero correspondiente al costo óptimo.
+  La salida debe contener un único entero correspondiente a la cantidad mínima
+  de minutos en que Naruto puede desactivar todas las bombas.
 \end{outputDescription}
 
 \begin{scoreDescription}
   \score{10} $a = b = 0$.
-  \score{10} $a = 0$ y $c - b \leq 2$.
-  \score{10} $b - a \leq 2$
-  \score{10} Sin restricciones adicionales.
+  \score{15} $a = 0$ y $c - b \leq 2$.
+  \score{32} $b - a \leq 2$
+  \score{43} Sin restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}
