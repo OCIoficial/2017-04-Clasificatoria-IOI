@@ -19,9 +19,9 @@
   Para simplificar la descripción diremos que una canción está formada por $T$
   tiempos, en los cuales pueden o no ocurrir notas musicales.
   Cada tiempo puede describirse con 5 enteros que pueden ser 0 o 1 indicando en
-  que posiciones hay notas y por lo tanto que botones deben presionarse.
-  Un 1 indica que hay una nota en esa posición y por lo tanto debe presionarse
-  el botón correspondiente.
+  qué posiciones hay notas y por lo tanto qué botones deben presionarse.
+  Un 1 indica que hay una nota en esa posición y para tocar la nota hay que
+  presionar el botón en la misma posición.
   Un 0 indica la ausencia de una nota en una posición.
   Pueden haber varias notas en un mismo tiempo y pueden haber varias
   notas consecutivas asociadas al mismo botón.
@@ -55,8 +55,8 @@
   Por otro lado presionar un botón teniendo un dedo en la posición no toma nada
   de tiempo.
   En cada tiempo Coni puede decir si presionar un botón con un dedo
-  manteniéndolo en esa posición, mantenerlo en la posición sin hacer nada o
-  comenzar a moverlo.
+  manteniéndolo en esa posición, mantener un dedo en una posición sin hacer nada
+  o comenzar a mover un dedo.
   Durante el tiempo que un dedo se encuentre en movimiento no puede presionar
   ningún botón.
   Coni posee una técnica extraordinaria que le permite mover cada dedo
@@ -67,16 +67,16 @@
   puede alcanzar a tocar dependiendo de la cantidad de dedos que utilice.
   Su problema es que, dependiendo del ritmo de la canción, puede que no sea
   capaz de mover los dedos lo suficientemente rápido.
-  Por ejemplo, considera la descripción de tiempos de la figura anterior y que
-  Coni juega con dos dedos y tarda $C=2$ tiempos en mover los dedos de posición.
+  Por ejemplo, considera la descripción de la figura anterior y que Coni juega
+  con 2 dedos y tarda $C=2$ tiempos en mover los dedos de posición.
   Ella podría escoger comenzar con sus dedos en las posiciones 3 y 5, y en el
-  primer tiempo puede decir presionar los botones 3 y 5, para así tocar
-  las dos notas de este tiempo.
+  primer tiempo decir presionar los botones en estas mismas posiciones, para así
+  tocar las dos notas que presentes en este tiempo.
   En el siguiente tiempo puede decidir presionar el botón en la posición 3
-  tacando la única nota de este tiempo y comenzar a mover el dedo que
+  tocando la única nota de este tiempo y comenzar a mover el dedo que
   tenía en la posición 5.
   En el tiempo 3 Coni aún mantiene un dedo en movimiento y no puede decidir
-  hacer nada con él.
+  hacer algo con él.
   El otro dedo se encuentra en la posición 3 y podría decidir mantenerlo en esta
   posición.
   En el tiempo 4 el dedo que había comenzado a mover ya podría haber alcanzado
@@ -88,13 +88,12 @@
 \end{problemDescription}
 \begin{inputDescription}
   La primera línea de la entrada contiene tres enteros $T$, $D$ y $C$
-  correspondientes respectivamente a la cantidad de tiempos de la canción, la
-  cantidad de dedos con los que juega Coni y a la cantidad de tiempos en que
-  Coni tarda en mover un dedo de una posición a otra.
+  correspondientes respectivamente a la cantidad de tiempos en la canción, la
+  cantidad de dedos con los que juega Coni y la cantidad de tiempos que Coni
+  tarda en mover un dedo de una posición a otra.
   Las siguientes $T$ líneas contienen la descripción de cada tiempo.
   Cada línea contiene 5 enteros que pueden ser 0 o 1.
-  Un 0 en la posición $i$-ésima indica que no hay una nota en esa posición para
-  el tiempo respectivo.
+  Un 0 en la posición $i$-ésima indica que no hay una nota en esa posición.
   Un 1 indica la presencia de una nota en la posición.
 \end{inputDescription}
 
@@ -107,7 +106,7 @@
   \score{10} Se probaran varios casos donde $D = 1$, $C = 0$ y además $T \le 100$.
   \score{25} Se probarán varios casos donde $D = 2$ y $C = 0$ y además $T \le 100$.
   \score{30} Se probarán varios casos donde $D = 1$ y $C = 1$ y además $T \le 1000$.
-  \score{35} Se probarán varios casos donde $2 \le D \le 3$ y $1 \le c \le 5$ y
+  \score{35} Se probarán varios casos donde $2 \le D \le 3$ y $1 \le C \le 5$ y
   además $T \le 1000$.
 \end{scoreDescription}
 
