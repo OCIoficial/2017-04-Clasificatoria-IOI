@@ -28,7 +28,9 @@ def generate_case(J, Q):
 
 	for _ in range(Q):
 		a = random.choice(random.choice(clusters))
-		b = random.choice(random.choice(clusters))
+		b = a
+		while b == a:
+			b = random.choice(random.choice(clusters))
 		m = random.randint(0, 2)
 		print(a, b, m)
 		
