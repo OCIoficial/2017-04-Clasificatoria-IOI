@@ -7,56 +7,81 @@
 
 \begin{document}
 \begin{problemDescription}
-``Eureka!'' gritó el Dr. Bernardé al probar con éxito su último invento: el
-teletransportador cuántico de flujos.
-Con este invento, él planeaba revolucionar la industria de la transportación.
+  ``Eureka!'' gritó el Dr. Bernardé al terminar con éxito las pruebas de su
+  último invento: el teletransportador cuántico de flujos.
+  Con este invento, Bernadé planeaba revolucionar la industria de la
+  teletransportación en la gran nación de Nlogonia.
+  Sin embargo, a pesar de su innovadora tecnología este invento presentó un gran
+  problema para las autoridades de Nlogonia quienes tenían que regular su uso
+  antes de su construcción.
 
-Pero este invento presento un gran problema para la gran nación de Nlogonia:
-Dada su distribución consistente en una gran Metrópolis central con pequeñas
-ciudades alrededor, cada una conectada por un camino a la capital, no hay forma
-simple de organizar el costo del uso del transportador: Si el transportador
-cuesta menos que el peaje del camino, este va a terminar colapsando por su mayor
-uso; y en el caso contrario el camino colapsará.
+  La nación de Nlogonia tiene una distribución particular consistente en una gran
+  Metrópolis central rodeada de varias ciudades pequeñas.
+  Cada ciudad está conectada directamente con la Metrópolis central mediante
+  una autopista y para utilizarlas los nlogones deben pagar un peaje cuyo valor
+  depende de las características de la autopista.
 
-Dada esta compleja situación, el presidente Robinçois llego a una sola
-conclusión: el precio del teletransportador y el de uso de un camino deben ser
-iguales.
-Dado que el teletransportador es un servicio estatal, su coste debe ser
-igual en todas las ciudades, así que se decidió que todos los caminos iban a ser
-modificados de tal manera que todos tuvieran igual coste.
+  Antes de su construcción las autoridades de Nlogonia deben fijar el precio del
+  uso del teletransportador. 
+  Esta no es una tarea sencilla pues el precio que escojan puede tener severas
+  consecuencias en la congestión de Nlogonia.
+  Si el costo de uso del teletransportador es menor que el costo de uso de una
+  autopista, este va a terminar colapsando por su mayor uso; y en el caso
+  contrario la autopista colapsará.
 
-Esta no es una tarea fácil, pues cada camino tiene inicialmente un costo $A_i$ y
-cambiar este costo en una unidad cuesta $C_i$ Nlogdolarés.
-Es por esto que te han contratado a ti para responder la siguiente pregunta:
-¿Cual es el coste $C$ óptimo para el teletransportador de tal manera que el costo
-de cambiar los caminos sea mínimo?
+  Después de un minucioso análisis en mano de sus expertos asesores, el
+  presidente Robinçois determinó que la única solución posible es que el precio
+  de uso del teletransportador y el de las autopistas sea el mismo.
+  Dado que el teletransportador es un servicio estatal, su costo debe ser
+  igual para todas las ciudades, así que la determinación es que todas las
+  autopistas deben ser modificados de forma que tengan el mismo costo de uso.
+
+  En Nlogonia existen $N$ autopistas y cada una es identificada con un número
+  entre 1 y $N$.
+  Inicialmente la autopista $i$-ésima tiene un costo de uso de $A_i$ nlogdolares
+  y modificarla para cambiar su costo de uso en una unidad cuesta $C_i$
+  nlogdolares.
+  Por ejemplo, si el costo inicial de uso de una autopista es 4 nlogdolares y
+  el costo unitario de modificación es de 2 nlogdolares habría que pagar
+  $(8-4)\times 2=4\times 2=10$ nlogdolares si se quiere modificar la autopista
+  para que su costo de uso sea 8 nlogdolares.
+  Similarmente habría que pagar $(4-1)\times 2=6$ nlogdolares para que el costo
+  de uso de la autopista sea 1 nlogdolar.
+
+  Dada esta difícil situación se ta ha encomendado responder la siguiente
+  pregunta: ¿Cuál es el costo $C$ que debe tener el uso del teletransportador de
+  tal manera que el costo total de modificar las autopistas sea mínimo?
 
 \end{problemDescription}
 
 \begin{inputDescription}
-  Primero recibirás n ($2 \leq n \leq 10^6$): la cantidad de caminos.
-  En la primera
-linea recibiras n números: Los valores de $A_i$ .
-Y en la última linea recibiras n números: 
-Los valores de $C_i$ ($1 \leq C_i \leq 10^3$).
+  La primera línea de la entrada contiene un único entero $N$ ($2 \leq N \leq
+  10^6$) correspondiente a la cantidad de autopistas.
+  La siguiente línea contiene $N$ enteros $A_1, A_2, \ldots, A_N$ describiendo el
+  costo inicial de uso de las autopistas.
+  La última línea contiene $N$ enteros $C_1, C_2, \ldots, C_N$ ($1 \leq C_i \leq
+  10^3$) correspondientes al costo unitario de modificación de las autopistas.
 \end{inputDescription}
 
 \begin{outputDescription}
-Deberás imprimir un solo número: El valor para $C$ de tal manera que el costo de
-cambiar todos los caminos sea mínimo.
-En el caso de que existan múltiples $C$, imprime aquel con menor valor.
+  La salida debe consistir en una única línea conteniendo un entero: el costo
+  $C$ que debe tener el uso del teletransportador de forma que el costo total de
+  modificar las autopistas sea mínimo.
+  En el caso de que exista más de un valor $C$ con estas características, debes
+  imprimir el menor de estos.
 \end{outputDescription}
 
 \begin{scoreDescription}
-  \score{10} $A_i=A_j$ para todo $i,j$ y $1 \leq A_i \leq 10^9$.
-  \score{20} $1 \leq A_i \leq 10$.
-  \score{30} $C_i=C_j$ para todo $i,j$ y $1\leq A_i\leq 10^9$.
-  \score{40} $1\leq A_i\leq 10^9$ y sin restricciones adicionales
+  \score{10} Se probarán varios casos donde $A_i=A_j$ para todo $i,j$ y además
+  $1 \leq A_i \leq 10^9$.
+  \score{23} Se probarán varios casos donde $1 \leq A_i \leq 10$.
+  \score{32} Se probarán varios casos donde $N=2$.
+  \score{45} Se probarán varios casos donde $1\leq A_i\leq 10^9$.
 \end{scoreDescription}
 
 \begin{sampleDescription}
-\sampleIO{sample-1}
-\sampleIO{sample-2}
+  \sampleIO{sample-1}
+  \sampleIO{sample-2}
 \end{sampleDescription}
 
 \end{document}

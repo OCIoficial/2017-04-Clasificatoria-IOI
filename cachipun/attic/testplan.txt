@@ -15,7 +15,7 @@
 
 # J = 2
 
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   # Use sample data as test
   1 ; copy statement/sample-1.in
   1 ; copy statement/sample-2.in
@@ -23,105 +23,105 @@
   # Random tests
   2 ; random_gen.py 2 9
   2 ; random_gen.py 2 9
-  2 ; pairwise.py 2 9
-  2 ; pairwise.py 2 9
-  2 ; no_ties.py 2 9
-  2 ; no_ties.py 2 9
-  2 ; mostly_ties.py 2 9
-  2 ; mostly_ties.py 2 9
+  3 ; pairwise.py 2 9
+  3 ; pairwise.py 2 9
+  4 ; no_ties.py 2 9
+  4 ; no_ties.py 2 9
+  5 ; mostly_ties.py 2 9
+  5 ; mostly_ties.py 2 9
 
 
 # J = 3
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   # Random tests
-  3 ; random_gen.py 3 9
-  3 ; random_gen.py 3 9
-  3 ; pairwise.py 3 9
-  3 ; pairwise.py 3 9
+  1 ; random_gen.py 3 9
+  1 ; random_gen.py 3 9
+  2 ; pairwise.py 3 9
+  2 ; pairwise.py 3 9
   3 ; triplets.py 3 9
   3 ; triplets.py 3 9
-  3 ; no_ties.py 3 9
-  3 ; no_ties.py 3 9
-  3 ; mostly_ties.py 3 9
-  3 ; mostly_ties.py 3 9
-  3 ; connected_graphs_anti_greedy.py 3 9
-  3 ; connected_graphs_anti_greedy.py 3 9
+  4 ; no_ties.py 3 9
+  4 ; no_ties.py 3 9
+  5 ; mostly_ties.py 3 9
+  5 ; mostly_ties.py 3 9
+  6 ; connected_graphs_anti_greedy.py 3 9
+  6 ; connected_graphs_anti_greedy.py 3 9
 
 # Q < 10
 
-[Subtask 3]
-  4 ; random_gen.py 10 9
-  4 ; random_gen.py 100 9
-  4 ; random_gen.py 1000 9
-  4 ; random_gen.py 10000 9
-  4 ; random_gen.py 100000 9
-  4 ; pairwise.py 10 9
-  4 ; pairwise.py 100 9
-  4 ; pairwise.py 1000 9
-  4 ; pairwise.py 10000 9
-  4 ; pairwise.py 100000 9
-  4 ; triplets.py 10 9
-  4 ; triplets.py 100 9
-  4 ; triplets.py 1000 9
-  4 ; triplets.py 10000 9
-  4 ; triplets.py 100000 9
+[Subtask 3 - validators/st3.cpp]
+  1 ; random_gen.py 10 9
+  1 ; random_gen.py 100 9
+  1 ; random_gen.py 1000 9
+  1 ; random_gen.py 10000 9
+  1 ; random_gen.py 100000 9
+  2 ; pairwise.py 10 9
+  2 ; pairwise.py 100 9
+  2 ; pairwise.py 1000 9
+  2 ; pairwise.py 10000 9
+  2 ; pairwise.py 100000 9
+  3 ; triplets.py 10 9
+  3 ; triplets.py 100 9
+  3 ; triplets.py 1000 9
+  3 ; triplets.py 10000 9
+  3 ; triplets.py 100000 9
   4 ; no_ties.py 10 9
   4 ; no_ties.py 100 9
   4 ; no_ties.py 1000 9
   4 ; no_ties.py 10000 9
   4 ; no_ties.py 100000 9
-  4 ; mostly_ties.py 10 9
-  4 ; mostly_ties.py 100 9
-  4 ; mostly_ties.py 1000 9
-  4 ; mostly_ties.py 10000 9
-  4 ; mostly_ties.py 100000 9
-  4 ; connected_graphs_anti_greedy.py 10 9
-  4 ; connected_graphs_anti_greedy.py 100 9
-  4 ; connected_graphs_anti_greedy.py 1000 9
-  4 ; connected_graphs_anti_greedy.py 10000 9
-  4 ; connected_graphs_anti_greedy.py 100000 9
+  5 ; mostly_ties.py 10 9
+  5 ; mostly_ties.py 100 9
+  5 ; mostly_ties.py 1000 9
+  5 ; mostly_ties.py 10000 9
+  5 ; mostly_ties.py 100000 9
+  6 ; connected_graphs_anti_greedy.py 10 9
+  6 ; connected_graphs_anti_greedy.py 100 9
+  6 ; connected_graphs_anti_greedy.py 1000 9
+  6 ; connected_graphs_anti_greedy.py 10000 9
+  6 ; connected_graphs_anti_greedy.py 100000 9
 
 # Sin restricciones
 
-[Subtask 4]
+[Subtask 4 - validators/st4.cpp]
 
-  5 ; random_gen.py 10 10
-  5 ; random_gen.py 10 100
-  5 ; random_gen.py 10 1000
-  5 ; random_gen.py 100 100
-  5 ; random_gen.py 1000 1000
-  5 ; random_gen.py 1000 10000
-  5 ; random_gen.py 1000 100000
-  5 ; random_gen.py 10000 10000
-  5 ; random_gen.py 100000 100000
-  5 ; pairwise.py 10 10
-  5 ; pairwise.py 10 100
-  5 ; pairwise.py 10 1000
-  5 ; pairwise.py 100 100
-  5 ; pairwise.py 1000 1000
-  5 ; pairwise.py 1000 10000
-  5 ; pairwise.py 1000 100000
-  5 ; pairwise.py 10000 10000
-  5 ; pairwise.py 100000 100000
-  5 ; triplets.py 10 10
-  5 ; triplets.py 10 100
-  5 ; triplets.py 10 1000
-  5 ; triplets.py 100 100
-  5 ; triplets.py 1000 1000
-  5 ; triplets.py 1000 10000
-  5 ; triplets.py 1000 100000
-  5 ; triplets.py 10000 10000
-  5 ; triplets.py 100000 100000
-  5 ; no_ties.py 10 10
-  5 ; no_ties.py 10 100
-  5 ; no_ties.py 10 1000
-  5 ; no_ties.py 100 100
-  5 ; no_ties.py 1000 1000
-  5 ; no_ties.py 1000 10000
-  5 ; no_ties.py 1000 100000
-  5 ; no_ties.py 10000 10000
-  5 ; no_ties.py 100000 100000
+  1 ; random_gen.py 10 10
+  1 ; random_gen.py 10 100
+  1 ; random_gen.py 10 1000
+  1 ; random_gen.py 100 100
+  1 ; random_gen.py 1000 1000
+  1 ; random_gen.py 1000 10000
+  1 ; random_gen.py 1000 100000
+  1 ; random_gen.py 10000 10000
+  1 ; random_gen.py 100000 100000
+  2 ; pairwise.py 10 10
+  2 ; pairwise.py 10 100
+  2 ; pairwise.py 10 1000
+  2 ; pairwise.py 100 100
+  2 ; pairwise.py 1000 1000
+  2 ; pairwise.py 1000 10000
+  2 ; pairwise.py 1000 100000
+  2 ; pairwise.py 10000 10000
+  2 ; pairwise.py 100000 100000
+  3 ; triplets.py 10 10
+  3 ; triplets.py 10 100
+  3 ; triplets.py 10 1000
+  3 ; triplets.py 100 100
+  3 ; triplets.py 1000 1000
+  3 ; triplets.py 1000 10000
+  3 ; triplets.py 1000 100000
+  3 ; triplets.py 10000 10000
+  3 ; triplets.py 100000 100000
+  4 ; no_ties.py 10 10
+  4 ; no_ties.py 10 100
+  4 ; no_ties.py 10 1000
+  4 ; no_ties.py 100 100
+  4 ; no_ties.py 1000 1000
+  4 ; no_ties.py 1000 10000
+  4 ; no_ties.py 1000 100000
+  4 ; no_ties.py 10000 10000
+  4 ; no_ties.py 100000 100000
   5 ; mostly_ties.py 10 10
   5 ; mostly_ties.py 10 100
   5 ; mostly_ties.py 10 1000
@@ -131,12 +131,12 @@
   5 ; mostly_ties.py 1000 100000
   5 ; mostly_ties.py 10000 10000
   5 ; mostly_ties.py 100000 100000
-  5 ; connected_graphs_anti_greedy.py 10 10
-  5 ; connected_graphs_anti_greedy.py 10 100
-  5 ; connected_graphs_anti_greedy.py 10 1000
-  5 ; connected_graphs_anti_greedy.py 100 100
-  5 ; connected_graphs_anti_greedy.py 1000 1000
-  5 ; connected_graphs_anti_greedy.py 1000 10000
-  5 ; connected_graphs_anti_greedy.py 1000 100000
-  5 ; connected_graphs_anti_greedy.py 10000 10000
-  5 ; connected_graphs_anti_greedy.py 100000 100000
+  6 ; connected_graphs_anti_greedy.py 10 10
+  6 ; connected_graphs_anti_greedy.py 10 100
+  6 ; connected_graphs_anti_greedy.py 10 1000
+  6 ; connected_graphs_anti_greedy.py 100 100
+  6 ; connected_graphs_anti_greedy.py 1000 1000
+  6 ; connected_graphs_anti_greedy.py 1000 10000
+  6 ; connected_graphs_anti_greedy.py 1000 100000
+  6 ; connected_graphs_anti_greedy.py 10000 10000
+  6 ; connected_graphs_anti_greedy.py 100000 100000

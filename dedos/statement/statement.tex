@@ -1,0 +1,118 @@
+\documentclass{oci}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage{diagbox}
+
+\title{Dedos Rápidos}
+\codename{dedos}
+
+\begin{document}
+\begin{problemDescription}
+  Dedos rápidos es un famoso videojuego de ritmo donde los jugadores simulan
+  estar en una banda de rock tocando una guitarra eléctrica simplificada.
+  La guitarra simplificada consiste en un mástil con 5 botones representando los
+  trastes de la guitarra.
+  A medida que la canción progresa distintas marcas son mostradas en la pantalla
+  indicando que botones debe presionar el jugador para tocar las notas de la canción.
+  El objetivo es acertar la mayor cantidad de notas posibles.
+
+  Para simplificar la descripción diremos que una canción está formada por $T$
+  tiempos, en los cuales pueden o no ocurrir notas musicales.
+  Cada tiempo puede describirse con 5 enteros que pueden ser 0 o 1 indicando en
+  qué posiciones hay notas y por lo tanto qué botones deben presionarse.
+  Un 1 indica que hay una nota en esa posición y para tocar la nota hay que
+  presionar el botón en la misma posición.
+  Un 0 indica la ausencia de una nota en una posición.
+  Pueden haber varias notas en un mismo tiempo y pueden haber varias
+  notas consecutivas asociadas al mismo botón.
+  La figura que se muestra a continuación contiene la descripción de 6 tiempos
+  consecutivos.
+  En el primer tiempo hay notas en la posiciones 3 y 4.
+  En el siguiente tiempo hay una nota solo en la posición 3.
+  Posteriormente en el tiempo 3 no hay ninguna nota.
+  En el tiempo 4 hay una en la posición 4 y otra en la posición 1.
+  Luego en el tiempo 5 no hay ninguna nota.
+  Finalmente, el último tiempo tiene una sola nota en la posición 4.
+
+  \begin{center}
+    \begin{tabular}{r|ccccc}
+        & 1 & 2 & 3 & 4 & 5 \\
+      \hline
+      1 & 0 & 0 & 1 & 0 & 1 \\
+      2 & 0 & 0 & 1 & 0 & 0 \\
+      3 & 0 & 0 & 0 & 0 & 0 \\
+      4 & 1 & 0 & 1 & 0 & 0 \\
+      5 & 0 & 0 & 0 & 0 & 0 \\
+      6 & 0 & 0 & 0 & 1 & 0 \\
+    \end{tabular}
+  \end{center}
+
+  Coni es fanática de este videojuego y esta interesada en estudiar como
+  maximizar su puntaje al jugar.
+  Ella puede escoger en que posiciones pondrá inicialmente sus dedos y mover un
+  dedo de una posición a cualquier otra le toma $C$ tiempos, valor que depende
+  de la velocidad y ritmo de la canción.
+  Por otro lado presionar un botón teniendo un dedo en la posición no toma nada
+  de tiempo.
+  En cada tiempo Coni puede decir si presionar un botón con un dedo
+  manteniéndolo en esa posición, mantener un dedo en una posición sin hacer nada
+  o comenzar a mover un dedo.
+  Durante el tiempo que un dedo se encuentre en movimiento no puede presionar
+  ningún botón.
+  Coni posee una técnica extraordinaria que le permite mover cada dedo
+  de forma totalmente independiente, cruzar sus dedos mientras juega y mantener
+  más de un dedo sobre la misma posición.
+
+  Para cada canción Coni desea saber cuál es la cantidad máxima de notas que
+  puede alcanzar a tocar dependiendo de la cantidad de dedos que utilice.
+  Su problema es que, dependiendo del ritmo de la canción, puede que no sea
+  capaz de mover los dedos lo suficientemente rápido.
+  Por ejemplo, considera la descripción de la figura anterior y que Coni juega
+  con 2 dedos y tarda $C=2$ tiempos en mover los dedos de posición.
+  Ella podría escoger comenzar con sus dedos en las posiciones 3 y 5, y en el
+  primer tiempo decir presionar los botones en estas mismas posiciones, para así
+  tocar las dos notas que presentes en este tiempo.
+  En el siguiente tiempo puede decidir presionar el botón en la posición 3
+  tocando la única nota de este tiempo y comenzar a mover el dedo que
+  tenía en la posición 5.
+  En el tiempo 3 Coni aún mantiene un dedo en movimiento y no puede decidir
+  hacer algo con él.
+  El otro dedo se encuentra en la posición 3 y podría decidir mantenerlo en esta
+  posición.
+  En el tiempo 4 el dedo que había comenzado a mover ya podría haber alcanzado
+  la posición 1, además como el otro dedo se mantuvo en la posición 3 Coni puede
+  tocar las dos notas de este tiempo.
+  En el tiempo 5 Coni tiene sus dedos en las posiciones 1 y 3, pero sin importar
+  lo que decida hacer no alcanzará a mover sus dedos para alcanzar a tocar la
+  nota en la posición 6.
+\end{problemDescription}
+\begin{inputDescription}
+  La primera línea de la entrada contiene tres enteros $T$, $D$ y $C$
+  correspondientes respectivamente a la cantidad de tiempos en la canción, la
+  cantidad de dedos con los que juega Coni y la cantidad de tiempos que Coni
+  tarda en mover un dedo de una posición a otra.
+  Las siguientes $T$ líneas contienen la descripción de cada tiempo.
+  Cada línea contiene 5 enteros que pueden ser 0 o 1.
+  Un 0 en la posición $i$-ésima indica que no hay una nota en esa posición.
+  Un 1 indica la presencia de una nota en la posición.
+\end{inputDescription}
+
+\begin{outputDescription}
+  La salida debe corresponder a un único entero $M$ correspondiente al número
+  máximo de notas que Coni puede alcanzar a tocar.
+\end{outputDescription}
+
+\begin{scoreDescription}
+  \score{10} Se probaran varios casos donde $D = 1$, $C = 0$ y además $T \le 100$.
+  \score{25} Se probarán varios casos donde $D = 2$ y $C = 0$ y además $T \le 100$.
+  \score{30} Se probarán varios casos donde $D = 1$ y $C = 1$ y además $T \le 1000$.
+  \score{35} Se probarán varios casos donde $2 \le D \le 3$ y $1 \le C \le 5$ y
+  además $T \le 1000$.
+\end{scoreDescription}
+
+\begin{sampleDescription}
+\sampleIO{sample-1}
+\sampleIO{sample-2}
+\end{sampleDescription}
+
+\end{document}
