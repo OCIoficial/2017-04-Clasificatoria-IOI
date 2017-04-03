@@ -3,7 +3,7 @@ import sys
 
 k = int(sys.argv[2])
 n = int(sys.argv[3])
-seed = int(sys.argv[1])
+seed = sys.argv[1]
 
 random.seed(hash(seed))
 
