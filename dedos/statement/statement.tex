@@ -16,17 +16,18 @@
   indicando que botones debe presionar el jugador para tocar las notas de la canción.
   El objetivo es acertar la mayor cantidad de notas posibles.
 
-  Para simplificar la descripción diremos que una canción está formada por $T$
+  Para simplificar la descripción diremos que una canción está compuesta por $T$
   tiempos, en los cuales pueden o no ocurrir notas musicales.
-  Cada tiempo puede describirse con 5 enteros que pueden ser 0 o 1 indicando en
-  qué posiciones hay notas y por lo tanto qué botones deben presionarse.
-  Un 1 indica que hay una nota en esa posición y para tocar la nota hay que
+  Cada tiempo se describe con 5 enteros que pueden ser 0 o 1 indicando en qué
+  posiciones hay notas.
+  Un 1 indica que hay una nota en esa posición y para tocar esa nota hay que
   presionar el botón en la misma posición.
   Un 0 indica la ausencia de una nota en una posición.
   Pueden haber varias notas en un mismo tiempo y pueden haber varias
   notas consecutivas asociadas al mismo botón.
+
   La figura que se muestra a continuación contiene la descripción de 6 tiempos
-  consecutivos.
+  consecutivos de ejemplo.
   En el primer tiempo hay notas en la posiciones 3 y 4.
   En el siguiente tiempo hay una nota solo en la posición 3.
   Posteriormente en el tiempo 3 no hay ninguna nota.
@@ -49,12 +50,12 @@
 
   Coni es fanática de este videojuego y esta interesada en estudiar como
   maximizar su puntaje al jugar.
-  Ella puede escoger en que posiciones pondrá inicialmente sus dedos y mover un
+  Ella puede escoger en qué posiciones pondrá inicialmente sus dedos y mover un
   dedo de una posición a cualquier otra le toma $C$ tiempos, valor que depende
   de la velocidad y ritmo de la canción.
-  Por otro lado presionar un botón teniendo un dedo en la posición no toma nada
-  de tiempo.
-  En cada tiempo Coni puede decir si presionar un botón con un dedo
+  Por otro lado presionar un botón teniendo un dedo ya en la posición no toma
+  nada de tiempo.
+  En cada tiempo Coni puede decidir si presionar un botón con un dedo
   manteniéndolo en esa posición, mantener un dedo en una posición sin hacer nada
   o comenzar a mover un dedo.
   Durante el tiempo que un dedo se encuentre en movimiento no puede presionar
@@ -71,20 +72,20 @@
   con 2 dedos y tarda $C=2$ tiempos en mover los dedos de posición.
   Ella podría escoger comenzar con sus dedos en las posiciones 3 y 5, y en el
   primer tiempo decir presionar los botones en estas mismas posiciones, para así
-  tocar las dos notas que presentes en este tiempo.
+  tocar las dos notas presentes en este tiempo.
   En el siguiente tiempo puede decidir presionar el botón en la posición 3
   tocando la única nota de este tiempo y comenzar a mover el dedo que
   tenía en la posición 5.
-  En el tiempo 3 Coni aún mantiene un dedo en movimiento y no puede decidir
-  hacer algo con él.
+  En el tiempo 3 Coni aún mantiene un dedo en movimiento y no puede hacer nada
+  más con él.
   El otro dedo se encuentra en la posición 3 y podría decidir mantenerlo en esta
   posición.
   En el tiempo 4 el dedo que había comenzado a mover ya podría haber alcanzado
   la posición 1, además como el otro dedo se mantuvo en la posición 3 Coni puede
   tocar las dos notas de este tiempo.
   En el tiempo 5 Coni tiene sus dedos en las posiciones 1 y 3, pero sin importar
-  lo que decida hacer no alcanzará a mover sus dedos para alcanzar a tocar la
-  nota en la posición 6.
+  lo que decida hacer no alcanzará a mover sus dedos para tocar la nota en la
+  posición 6.
 \end{problemDescription}
 \begin{inputDescription}
   La primera línea de la entrada contiene tres enteros $T$, $D$ y $C$
