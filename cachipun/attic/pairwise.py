@@ -7,7 +7,7 @@ random.seed(hash(sys.argv[1]))
 def generate_case(J, Q):
 	print(J, Q)
 	dJ = J//2
-	rJ = dJ *2 
+	rJ = dJ *2
 	list_of_players = list(range(rJ))
 	random.shuffle(list_of_players)
 	first_half = list_of_players[0:dJ]
@@ -16,10 +16,10 @@ def generate_case(J, Q):
 		a = random.choice(first_half)
 		b = random.choice(second_half)
 		m = random.randint(0,2)
-		
-		print(a,b,m)
-			
-	
+
+		print(a + 1, b + 1, m)
+
+
 
 J, Q = int(sys.argv[2]), int(sys.argv[3])
 

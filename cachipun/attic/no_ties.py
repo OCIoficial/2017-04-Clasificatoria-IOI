@@ -7,10 +7,10 @@ random.seed(hash(sys.argv[1]))
 def generate_case(J, Q):
 	print(J, Q)
 	for _ in range(Q):
-		a = random.randint(0,J)
+		a = random.randint(1,J)
 		b = a
 		while b == a:
-			b = random.randint(0,J)
+			b = random.randint(1,J)
 		m = random.choice([0,2])
 		
 		print(a, b, m)	
