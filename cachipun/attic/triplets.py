@@ -21,10 +21,11 @@ def generate_case(J, Q):
 		m2 = random.randint(0,2)
 		print(a+1,b+1,m1)
 		print(b+1,c+1,m2)
-	a = random.choice(first_third)
-	b = random.choice(third_third)
-	m = random.randint(0,1)
-	print(a + 1, b + 1, m)
+	if Q%2:
+		a = random.choice(first_third)
+		b = random.choice(third_third)
+		m = random.randint(0,1)
+		print(a + 1, b + 1, m)
 
 
 J, Q = int(sys.argv[2]), int(sys.argv[3])
