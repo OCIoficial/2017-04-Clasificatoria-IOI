@@ -1,9 +1,9 @@
 import random
 import sys
 
-k = int(sys.argv[1])
-n = int(sys.argv[2])
-seed = int(sys.argv[3])
+k = int(sys.argv[2])
+n = int(sys.argv[3])
+seed = int(sys.argv[1])
 
 random.seed(hash(seed))
 
