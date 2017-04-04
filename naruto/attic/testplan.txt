@@ -12,7 +12,7 @@
 # To generate test cases using test plan use `ocimatic gen-input`
 
 
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   1 ; copy statement/sample-1.in
   2 ; copy attic/manual-1.in
   2 ; copy attic/manual-2.in
@@ -25,7 +25,7 @@
   3 ; random.py3 1 100
   3 ; random.py3 1 100
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   1 ; copy statement/sample-1.in
   2 ; copy attic/manual-1.in
   2 ; copy attic/manual-2.in
@@ -37,13 +37,13 @@
   3 ; random.py3 2 100
   3 ; random.py3 2 100
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
   1 ; copy statement/sample-1.in
   1 ; copy statement/sample-2.in
   2 ; copy attic/manual-1.in
   2 ; copy attic/manual-2.in
   2 ; copy attic/manual-3.in
-  2 ; copy attic/manual-4.in
+  # 2 ; copy attic/manual-4.in
   2 ; copy attic/manual-5.in
   2 ; copy attic/manual-6.in
   3 ; random.py3 3 100
@@ -54,7 +54,7 @@
   3 ; random.py3 3 100
   3 ; random.py3 3 100
 
-[Subtask 4]
+[Subtask 4 - validators/st4.cpp]
   1 ; copy statement/sample-1.in
   1 ; copy statement/sample-2.in
   2 ; copy attic/manual-1.in
