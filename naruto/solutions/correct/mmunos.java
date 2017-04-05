@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 public class mmunos {
-	static final int N = 100;
+	static final int N = 101;
 	public static void main(String[] args) {
 		int[][][] dp = new int[N][N][N];
 		for(int x = 0; x < N; x++){
