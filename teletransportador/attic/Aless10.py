@@ -1,13 +1,11 @@
 import sys,random
 
-random.seed(hash(eval(sys.argv[1])))
-N = eval(sys.argv[2])
+random.seed(hash(sys.argv[1]))
+N = int(sys.argv[2])
 print(N)
-for i in range(N):
+for i in range(N-1):
 	print(random.randint(1,10),end=' ')
-print()
-for i in range(N):
-	print(random.randint(1,20),end=' ')
-
-
-
+print(random.randint(1,10))
+for i in range(N-1):
+	print(random.randint(1,1000),end=' ')
+print(random.randint(1,1000))

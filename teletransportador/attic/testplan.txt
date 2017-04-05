@@ -17,14 +17,14 @@
   1 ; copy statement/sample-1.in
 
   # Random tests
-  2 ; SameA.py 10 10
-  2 ; SameA.py 100 100
-  2 ; SameA.py 1000 1000
-  2 ; SameA.py 10000 10000
-  2 ; SameA.py 100000 100000
-  2 ; SameA.py 1000000 1000000
-  2 ; SameA.py 10000000 1000000
-  2 ; SameA.py 100000000 1000000
+  2 ; SameA.py 10
+  2 ; SameA.py 100
+  2 ; SameA.py 1000
+  2 ; SameA.py 10000
+  2 ; SameA.py 100000
+  2 ; SameA.py 1000000
+  2 ; SameA.py 1000000
+  2 ; SameA.py 1000000
 
 
 [Subtask 2]
@@ -32,58 +32,58 @@
   1 ; copy statement/sample-2.in
 
   # Random Tests
-  2 ; Aless10.py 10 10
-  2 ; Aless10.py 100 100
-  2 ; Aless10.py 1000 1000
-  2 ; Aless10.py 10000 10000
-  2 ; Aless10.py 100000 100000
-  2 ; Aless10.py 1000000 1000000
-  2 ; Aless10.py 10000000 1000000
-  2 ; Aless10.py 100000000 1000000
+  2 ; Aless10.py 10
+  2 ; Aless10.py 100
+  2 ; Aless10.py 1000
+  2 ; Aless10.py 10000
+  2 ; Aless10.py 100000
+  2 ; Aless10.py 1000000
+  2 ; Aless10.py 1000000
+  2 ; Aless10.py 1000000
 
 [Subtask 3]
   # Use sample data as test
   1 ; copy statement/sample-3.in
 
   # Random Tests
-  2 ; Nequal2.py 10
-  2 ; Nequal2.py 100
-  2 ; Nequal2.py 1000
-  2 ; Nequal2.py 10000
-  2 ; Nequal2.py 100000
-  2 ; Nequal2.py 1000000
-  2 ; Nequal2.py 10000000
-  2 ; Nequal2.py 100000000
-  2 ; Nequal2.py 1000000000
+  2 ; Nequal2.py
+  2 ; Nequal2.py
+  2 ; Nequal2.py
+  2 ; Nequal2.py
+  2 ; Nequal2.py
+  2 ; Nequal2.py
+  2 ; Nequal2.py
+  2 ; Nequal2.py
+  2 ; Nequal2.py
 
 [Subtask 4]
   # Use sample data as test
   1 ; copy statement/sample-4.in
 
   # Random Tests
-  2 ; NoRestriction.py 10 10
-  2 ; NoRestriction.py 100 100
-  2 ; NoRestriction.py 1000 1000
-  2 ; NoRestriction.py 10000 10000
-  2 ; NoRestriction.py 100000 100000
-  2 ; NoRestriction.py 1000000 1000000
-  2 ; NoRestriction.py 10000000 1000000
-  2 ; NoRestriction.py 100000000 1000000
-  2 ; NoRestriction.py 100000001 1000000
-  2 ; NoRestriction.py 100000002 1000000
-  2 ; NoRestriction.py 100000003 1000000
-  2 ; NoRestriction.py 100000004 1000000
-  2 ; NoRestriction.py 100000005 1000000
-  2 ; NoRestriction.py 100000006 1000000
-  2 ; NoRestriction.py 100000007 1000000
-  2 ; NoRestriction.py 100000008 1000000
-  2 ; NoRestriction.py 100000009 1000000
-  2 ; NoRestriction.py 100000010 1000000
+  2 ; NoRestriction.py 10
+  2 ; NoRestriction.py 100
+  2 ; NoRestriction.py 1000
+  2 ; NoRestriction.py 10000
+  2 ; NoRestriction.py 100000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
+  2 ; NoRestriction.py 1000000
 
   # Overflow Checker
-  3 ; Overflow.py 10000000000 1000000
-  3 ; Overflow.py 10000000001 1000000
-  3 ; Overflow.py 10000000002 1000000
-  3 ; Overflow.py 10000000003 1000000
-  3 ; Overflow.py 10000000004 1000000
-  3 ; Overflow.py 10000000005 1000000
+  3 ; Overflow.py 1000000
+  3 ; Overflow.py 1000000
+  3 ; Overflow.py 1000000
+  3 ; Overflow.py 1000000
+  3 ; Overflow.py 1000000
+  3 ; Overflow.py 1000000
