@@ -6,13 +6,13 @@ int main()
 {
 	ios::sync_with_stdio(0); cin.tie(0);
 	int N; cin >> N;
-	ll A[N], C[N];
+	vector<ll> A(N), C(N);
 	for(int i = 0; i < N; ++i)
 		cin >> A[i];
 	for(int i = 0; i < N; ++i)
 		cin >> C[i];
 
-	ll l = *min_element(A,A+N), r = *max_element(A,A+N);
+	ll l = *min_element(A.begin(),A.end()), r = *max_element(A.begin(),A.end());
 	auto eval = [&](ll x)
 	{
 		ll ans = 0;

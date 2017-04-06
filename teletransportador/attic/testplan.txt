@@ -21,11 +21,6 @@
   2 ; SameA.py 100
   2 ; SameA.py 1000
   2 ; SameA.py 10000
-  2 ; SameA.py 100000
-  2 ; SameA.py 1000000
-  2 ; SameA.py 1000000
-  2 ; SameA.py 1000000
-
 
 [Subtask 2]
   # Use sample data as test
@@ -36,10 +31,6 @@
   2 ; Aless10.py 100
   2 ; Aless10.py 1000
   2 ; Aless10.py 10000
-  2 ; Aless10.py 100000
-  2 ; Aless10.py 1000000
-  2 ; Aless10.py 1000000
-  2 ; Aless10.py 1000000
 
 [Subtask 3]
   # Use sample data as test
@@ -69,21 +60,8 @@
   2 ; NoRestriction.py 1000000
   2 ; NoRestriction.py 1000000
   2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
-  2 ; NoRestriction.py 1000000
 
   # Overflow Checker
   3 ; Overflow.py 1000000
   3 ; Overflow.py 1000000
-  3 ; Overflow.py 1000000
-  3 ; Overflow.py 1000000
-  3 ; Overflow.py 1000000
-  3 ; Overflow.py 1000000
+
