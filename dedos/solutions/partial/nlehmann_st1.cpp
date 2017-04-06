@@ -11,18 +11,19 @@
 using namespace std;
 
 int main() {
-  int T, D, C, b;
+  int T, D, C, b, c;
   cin >> T >> D >> C;
 
   int count = 0;
   for (int i = 0; i < T; ++i) {
+    c = 0;
     for (int j = 0; j < 5; ++j) {
       cin >> b;
-      if (b == 0) {
-        count += 1;
-        break;
+      if (b == 1) {
+        c = 1;
       }
     }
+    count += c;
   }
   cout << count << "\n";
   return 0;
