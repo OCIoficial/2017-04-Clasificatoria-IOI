@@ -9,7 +9,7 @@ int main()
     for (int i = 0; i < N; ++i) {
       if (i > 0)
         inf.readSpace();
-      inf.readInt(1, 100000000, "A");
+      inf.readInt(1, 1000000000, "A");
     }
     inf.readEoln();
     for (int i = 0; i < N; ++i) {
