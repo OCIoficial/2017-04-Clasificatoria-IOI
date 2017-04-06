@@ -7,7 +7,9 @@
 using namespace std;
 
 
-int max_anterior(vector<int> estados, vector<int> dedos, int B, int C, int D);
+int pow(int, int);
+
+int max_anterior(vector<int> &estados, vector<int> &dedos, int B, int C, int D);
 
 int main() {
   int T, D, C, b;
@@ -15,13 +17,13 @@ int main() {
 
   cin >> T >> D >> C;
 
-  int n_estados = D * (BOTONES + C);
+  int n_estados = pow(BOTONES + C, D);
 
   vector<int> dedos(D);
   vector<int> notas(BOTONES);
   vector<vector<int> > dp(2, vector<int>(n_estados, 0));
 
-  for (int i = 0; i < T; ++i) {
+  for (int i = 1; i <= T; ++i) {
     for (int b = 0; b < BOTONES; ++b) {
       cin >> notas[b];
     }
@@ -71,34 +73,33 @@ int main() {
   return 0;
 }
 
-int max_rec(vector<int> ptje, vector<int> dedos, vector<int> stack, int B, int C, int D) {
+int max_rec(vector<int> &ptje, vector<int> &dedos, vector<int> stack, int B, int C, int D) {
   int m = 0;
   if (stack.size() == D) {
-    vector<int> candidato = stack;
-    sort(candidato.begin(), candidato.end(), greater<int>());
+    sort(stack.begin(), stack.end(), greater<int>());
     int estado = 0;
     int pot = 1;
     for (int i = 0; i < D; ++i) {
-      estado += candidato[i] * pot;
+      estado += stack[i] * pot;
       pot *= B + C;
     }
     return ptje[estado];
   }
   else {
-    if (dedos[stack.size()] < B) {
+    if (dedos[stack.size()] == B || C == 0) {
+      for (int i = 0; i < B; ++i) {
+        stack.push_back(i);
+        m = max(m, max_rec(ptje, dedos, stack, B, C, D));
+        stack.pop_back();
+      }
+    }
+    else if (dedos[stack.size()] < B) {
       stack.push_back(dedos[stack.size()]);
       m = max(m, max_rec(ptje, dedos, stack, B, C, D));
       stack.pop_back();
       stack.push_back(B + C - 1);
       m = max(m, max_rec(ptje, dedos, stack, B, C, D));
       stack.pop_back();
-    }
-    else if (dedos[stack.size()] == B) {
-      for (int i = 0; i < B; ++i) {
-        stack.push_back(i);
-        m = max(m, max_rec(ptje, dedos, stack, B, C, D));
-        stack.pop_back();
-      }
     }
     else {
       stack.push_back(dedos[stack.size()]-1);
@@ -109,6 +110,12 @@ int max_rec(vector<int> ptje, vector<int> dedos, vector<int> stack, int B, int C
   return m;
 }
 
-int max_anterior(vector<int> puntaje, vector<int> dedos, int B, int C, int D) {
+int max_anterior(vector<int> &puntaje, vector<int> &dedos, int B, int C, int D) {
   return max_rec(puntaje, dedos, vector<int>(), B, C, D);
+}
+
+int pow(int b, int x) {
+  if (x == 0) return 1;
+  if (x&1 == 0) return pow(b*b, x>>1);
+  return b * pow(b*b, x>>1);
 }
