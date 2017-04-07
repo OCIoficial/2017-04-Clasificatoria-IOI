@@ -14,7 +14,7 @@ class UF {
 		int find(int x){
 			if(representante[x] == x) return x;
 			int rep = find(representante[x]);
-			potencial[x] = (potencial[x] + potencial[representante[x]])%3;
+			potencial[x] = (3 + potencial[x] + potencial[representante[x]])%3;
 			representante[x] = rep;
 			return rep;
 		}
@@ -22,10 +22,10 @@ class UF {
 		void union_set(int x, int y, int edge){
 			int rx = find(x), ry = find(y);
 			if(rank[x] > rank[y]){
-				potencial[ry] = (edge + potencial[x] - potencial[y])%3;
+				potencial[ry] = (3 + edge + potencial[x] - potencial[y])%3;
 				representante[ry] = rx;
 			} else {
-				potencial[rx] = (edge + potencial[y] - potencial[x])%3;
+				potencial[rx] = (3 + edge + potencial[y] - potencial[x])%3;
 				representante[rx] = ry;
 				if(rank[x] == rank[y]) rank[y]++;
 			} 
@@ -37,7 +37,7 @@ class UF {
 				union_set(a, b, m);
 				return 1;
 			} else {
-				return (potencial[b] - potencial[a])%3 == m;
+				return (3 + potencial[b] - potencial[a])%3 == m;
 			}
 		}
 };
