@@ -22,14 +22,17 @@ int main() {
     cin >> B[i];
 
   int min = INT_MAX;
+  int imin = 1;
   for (int C = 1; C <= 10; ++C) {
     int cost = 0;
     for (int i = 0; i < N; ++i)
       cost += abs(A[i]-C)*B[i];
-    if (cost < min)
+    if (cost < min) {
       min = cost;
+      imin = C;
+    }
   }
-  cout << min << "\n";
+  cout << imin << "\n";
 
   return 0;
 }

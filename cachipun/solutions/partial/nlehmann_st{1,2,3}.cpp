@@ -18,6 +18,8 @@ void dfs(int n, int c) {
     color[n] = c;
   else if (color[n] != c)
     throw false;
+  else
+    return;
   for (auto pv : graph[n]) {
     int v = pv.first;
     int m = pv.second;
@@ -53,7 +55,7 @@ int main() {
     bool consistent = true;
     try {
       color.clear();
-      color.resize(J, -1);
+      color.resize(J + 1, -1);
       for (int i = 0; i < J; ++i)
         if (color[i] == -1)
           dfs(i, 0);
