@@ -10,30 +10,30 @@
 \begin{problemDescription}
   Dedos rápidos es un famoso videojuego de ritmo donde los jugadores simulan
   estar en una banda de rock tocando una guitarra eléctrica simplificada.
-  La guitarra simplificada consiste en un mástil con 5 botones representando los
-  trastes de la guitarra.
+  Esta guitarra consiste en un mástil con 5 botones representando los trastes de
+  la guitarra.
   A medida que la canción progresa distintas marcas son mostradas en la pantalla
   indicando que botones debe presionar el jugador para tocar las notas de la canción.
   El objetivo es acertar la mayor cantidad de notas posibles.
 
   Para simplificar la descripción, diremos que una canción está compuesta por $T$
-  tiempos, en los cuales pueden o no ocurrir notas musicales.
-  Cada tiempo se describe con 5 enteros que pueden ser 0 o 1 indicando en qué
+  \emph{beats}, en los cuales pueden o no ocurrir notas musicales.
+  Cada beat se describe con 5 enteros que pueden ser 0 o 1 indicando en qué
   posiciones hay notas.
   Un 1 indica que hay una nota en esa posición y para tocarla hay que presionar
   el botón en la misma posición.
   Un 0 indica la ausencia de una nota en una posición.
-  Pueden haber varias notas en un mismo tiempo y pueden haber varias
+  Pueden haber varias notas en un mismo beat y pueden haber varias
   notas consecutivas asociadas al mismo botón.
 
   La figura de ejemplo que se muestra a continuación contiene la descripción de
-  6 tiempos consecutivos.
-  En el primer tiempo hay notas en la posiciones 3 y 5.
-  En el siguiente tiempo hay una nota solo en la posición 3.
-  Posteriormente, en el tiempo 3 no hay ninguna nota.
-  En el tiempo 4 hay una en la posición 1 y otra en la posición 3.
-  En el tiempo 5 no hay ninguna nota.
-  Finalmente, el último tiempo tiene una sola nota en la posición 4.
+  6 beats consecutivos.
+  En el primer beat hay notas en las posiciones 3 y 5.
+  En el siguiente beat hay una nota solo en la posición 3.
+  Posteriormente, en el tercer beat no hay ninguna nota.
+  En el beat 4 hay una en la posición 1 y otra en la posición 3.
+  En el beat 5 no hay ninguna nota.
+  Finalmente, el último beat contiene una sola nota en la posición 4.
 
   \begin{center}
     \begin{tabular}{r|ccccc}
@@ -50,16 +50,19 @@
 
   Coni es fanática de este videojuego y esta interesada en estudiar como
   maximizar su puntaje al jugar.
-  Ella puede escoger en qué posiciones pondrá inicialmente sus dedos y mover un
-  dedo de una posición a cualquier otra le toma $C$ tiempos, valor que depende
-  de la velocidad y ritmo de la canción.
-  Por otro lado presionar un botón teniendo un dedo ya en la posición no toma
-  nada de tiempo.
-  En cada tiempo Coni puede decidir si presionar un botón con un dedo
-  manteniéndolo en esa posición, mantener un dedo en una posición sin hacer nada
-  o comenzar a mover un dedo.
-  Durante el tiempo que un dedo se encuentre en movimiento no puede presionar
-  ningún botón.
+  Inicialmente ella puede escoger en qué posiciones pondrá sus dedos y durante
+  la canción deberá moverlos a otras posiciones para alcanzar a tocar otras notas.
+  Al inicio de cada beat Coni puede decidir si presionar un botón, mantener un
+  dedo en una posición sin hacer nada con él o comenzar a mover uno.
+  Si Coni decide presionar un botón deberá mantenerlo presionado durante todo el
+  beat y al inicio del siguiente beat el dedo se mantendrá en la misma posición.
+  Si Coni decide comenzar a mover un dedo este se mantendrá inhabilitado durante
+  $C$ beats, valor que depende de la velocidad y ritmo de la canción.
+  Durante estos $C$ beats no podrá presionar ningún botón con el dedo, pero este
+  puede ser movido a cualquier otra posición.
+  Por ejemplo si $C=1$ y Coni decide empezar a mover un dedo en el beat 1 este
+  se mantendrá inhabilitado durante el beat 1 y en el beat 2 ya estará
+  habilitado para presionar un botón en cualquier posición.
   Coni posee una técnica extraordinaria que le permite mover cada dedo
   de forma totalmente independiente, cruzar sus dedos mientras juega y mantener
   más de un dedo sobre la misma posición.
@@ -69,30 +72,30 @@
   Su problema es que, dependiendo del ritmo de la canción, puede que no sea
   capaz de mover los dedos lo suficientemente rápido.
   Por ejemplo, considera la descripción de la figura anterior y que Coni juega
-  con 2 dedos y tarda $C=2$ tiempos en mover los dedos de posición.
+  con 2 dedos y tarda $C=2$ beats en mover los dedos de posición.
   Ella podría escoger comenzar con sus dedos en las posiciones 3 y 5, y en el
-  primer tiempo decidir presionar los botones en estas mismas posiciones, para así
-  tocar las dos notas presentes en este tiempo.
-  En el siguiente tiempo puede decidir presionar el botón en la posición 3
-  tocando la única nota de este tiempo y comenzar a mover el dedo que
+  primer beat decidir presionar los botones en estas mismas posiciones, para así
+  tocar las dos notas presentes en este beat.
+  En el siguiente beat puede decidir presionar el botón en la posición 3
+  tocando la única nota de este beat y a la vez comenzar a mover el dedo que
   tenía en la posición 5.
-  En el tercer tiempo Coni aún mantiene un dedo en movimiento y no puede hacer nada
+  En el tercer beat Coni aún mantiene un dedo en movimiento y no puede hacer nada
   más con él.
   El otro dedo se encuentra en la posición 3 y podría decidir mantenerlo en esta
-  posición.
-  En el tiempo 4 el dedo que había comenzado a mover ya podría haber alcanzado
+  posición sin hacer nada.
+  En el beat 4 el dedo que había comenzado a mover ya podría haber alcanzado
   la posición 1, además como el otro dedo se mantuvo en la posición 3 Coni puede
-  tocar las dos notas de este tiempo.
-  En el tiempo 5 Coni tiene sus dedos en las posiciones 1 y 3, pero sin importar
+  tocar las dos notas de este beat.
+  En el beat 5 Coni tiene sus dedos en las posiciones 1 y 3, pero sin importar
   lo que decida hacer no alcanzará a mover sus dedos para tocar la nota en la
   posición 6.
 \end{problemDescription}
 \begin{inputDescription}
   La primera línea de la entrada contiene tres enteros $T$, $D$ y $C$
-  correspondientes respectivamente a la cantidad de tiempos en la canción, la
-  cantidad de dedos con los que juega Coni y la cantidad de tiempos que Coni
+  correspondientes respectivamente a la cantidad de beats en la canción, la
+  cantidad de dedos con los que juega Coni y la cantidad de beats que Coni
   tarda en mover un dedo de una posición a otra.
-  Las siguientes $T$ líneas contienen la descripción de cada tiempo.
+  Las siguientes $T$ líneas contienen la descripción de cada beat.
   Cada línea contiene 5 enteros que pueden ser 0 o 1.
   Un 0 en la posición $i$-ésima indica que no hay una nota en esa posición.
   Un 1 indica la presencia de una nota en la posición.
