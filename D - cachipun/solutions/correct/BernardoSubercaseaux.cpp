@@ -11,6 +11,7 @@ class UF {
 			nodos = N; potencial.assign(N, 0); representante.assign(N,0);
 			rank.assign(N, 0); rep(i, N) representante[i] = i; 
 		}
+		
 		int find(int x){
 			if(representante[x] == x) return x;
 			int rep = find(representante[x]);
@@ -21,14 +22,8 @@ class UF {
 		
 		void union_set(int x, int y, int edge){
 			int rx = find(x), ry = find(y);
-			if(rank[x] > rank[y]){
-				potencial[ry] = (3 + edge + potencial[x] - potencial[y])%3;
-				representante[ry] = rx;
-			} else {
-				potencial[rx] = (3 + edge + potencial[y] - potencial[x])%3;
-				representante[rx] = ry;
-				if(rank[x] == rank[y]) rank[y]++;
-			} 
+			potencial[ry] = (3 + edge + potencial[x] - potencial[y])%3;
+			representante[ry] = rx;
 		}
 		
 		int take_query(int a, int b, int m){
@@ -36,9 +31,7 @@ class UF {
 			if(find(a) != find(b)){
 				union_set(a, b, m);
 				return 1;
-			} else {
-				return (3 + potencial[b] - potencial[a])%3 == m;
-			}
+			} else return (3 + potencial[b] - potencial[a])%3 == m;
 		}
 };
 
