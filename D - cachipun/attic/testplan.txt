@@ -18,7 +18,6 @@
 [Subtask 1 - validators/st1.cpp]
   # Use sample data as test
   1 ; copy statement/sample-1.in
-  1 ; copy statement/sample-2.in
 
   # Random tests
   2 ; random_gen.py 2 9
@@ -35,6 +34,7 @@
 
 [Subtask 2 - validators/st2.cpp]
   # Random tests
+  1 ; copy statement/sample-2.in
   1 ; random_gen.py 3 9
   1 ; random_gen.py 3 9
   2 ; pairwise.py 3 9

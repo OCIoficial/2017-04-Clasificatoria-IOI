@@ -41,3 +41,4 @@ twoside.pdf
 titlepage.pdf
 *.tar.gz
 __pycache__
+dataset
